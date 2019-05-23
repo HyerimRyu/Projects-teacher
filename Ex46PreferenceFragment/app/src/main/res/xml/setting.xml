@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <CheckBoxPreference
+        android:key="message"
+        android:title="소리알림"
+        android:summary="소리로 알림을 받으려면 체크하세요"/>
+
+    <SwitchPreference
+        android:key="vibrate"
+        android:title="진동알림"
+        android:summary="메세지와 왔을때 진동으로 알림을 받으려면 체크하세요"/>
+
+    <PreferenceCategory android:title="디버깅">
+        <SwitchPreference
+            android:key="aaa"
+            android:title="aaaa"
+            android:summary="asdfasdf"
+            android:defaultValue="true"/>
+
+        <!-- 위의 설정에 따라 Enable여부 결정되도록-->
+        <CheckBoxPreference
+            android:key="bbb"
+            android:title="bbb"
+            android:summary="ak;lsjdflkajsd"
+            android:dependency="aaa"/>
+    </PreferenceCategory>
+
+    <!--중첩으로 PreferenceScreen을 넣으면 새로운 설정창으로 열림-->
+    <PreferenceScreen
+        android:title="네트워크"
+        android:summary="네트워크를 설정합니다">
+
+        <SwitchPreference
+            android:key="ccc"
+            android:title="로밍서비스"
+            android:summaryOn="켜짐"
+            android:summaryOff="꺼짐"/>
+
+
+    </PreferenceScreen>
+
+    <PreferenceScreen
+        android:title="aaa">
+
+        <intent
+            android:targetPackage="com.mrhi2018.ex46preferencefragment"
+            android:targetClass="com.mrhi2018.ex46preferencefragment.SecondActivity"/>
+
+    </PreferenceScreen>
+
+
+
+
+</PreferenceScreen>

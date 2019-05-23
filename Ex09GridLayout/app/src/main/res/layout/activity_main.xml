@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    tools:context=".MainActivity">
+
+    <!-- Table의 미흡한 점 개선 : 중첩구조 제거, rowSpan도 가능, 뷰가 겹쳐질 수 있음.-->
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="350dp"
+        android:orientation="horizontal"
+        android:columnCount="3">
+
+        <Button android:text="1"/>
+        <Button android:text="2"/>
+        <Button android:text="3"/>
+        <Button android:text="4"/>
+        <Button android:text="5"/>
+        <!-- 셀(칸)의 사이즈를 조절해도 다른 칸에 영향을 주지 않음.-->
+        <Button android:text="6" android:layout_width="200dp"/>
+
+        <!-- 셀(칸)위치 지정할 때 순서가 뒤바뀌어도 적용됨.-->
+        <Button android:text="7" android:layout_column="1"/>
+        <Button android:text="8" android:layout_column="0"/>
+
+        <!--셀(칸)의 줄,칸 번호 모두 지정 가능-->
+        <Button android:text="9" android:layout_row="3" android:layout_column="2"/>
+        <!--줄,칸 번호를 모두 지정하면 겹칠 수 있음.-->
+        <Button android:text="10" android:layout_row="3" android:layout_column="2"/>
+
+        <!--셀병합(columnSpan)-->
+        <Button android:text="11" android:layout_columnSpan="2" android:layout_gravity="fill_horizontal"/>
+
+        <!--rowSpan-->
+        <Button android:layout_rowSpan="2" android:layout_gravity="fill_vertical"/>
+
+        <Button />
+        <Button android:layout_column="2"/>
+
+
+    </GridLayout>
+
+    <!--TableLayout처럼 stretchColumn 이 없어서 균등분할 못함-->
+    <!--API21 버전부터 layout_columnWeight속성이 생김-->
+    <!--API21버전 미만 phone에서는 적용되지 않음-->
+    <!--미만폰에서는 에러가 아니라 weight속성이 무시됨-->
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:orientation="horizontal"
+        android:columnCount="2">
+
+        <Button android:layout_columnWeight="1"/>
+        <Button android:layout_columnWeight="1"/>
+        <Button android:layout_columnWeight="1"/>
+
+        <GridLayout
+            android:layout_columnWeight="1"
+            android:orientation="vertical"
+            android:rowCount="2">
+
+            <Button />
+            <Button />
+
+        </GridLayout>
+
+    </GridLayout>
+
+
+
+</LinearLayout>

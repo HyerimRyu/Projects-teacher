@@ -1,0 +1,15 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+
+        <!--액션모드 배경색 변경-->
+        <!--색상 넣을 때 반드시 colors.xml 리소스를 이용해야 만 함. 하드코딩하면 에러남.-->
+        <item name="actionModeBackground">@color/actionBack</item>
+    </style>
+
+</resources>

@@ -1,0 +1,17 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+
+        <!--제목줄 없애기-->
+        <item name="windowNoTitle">true</item>
+        <!--상태표시줄 제거(전체화면모드)-->
+        <item name="android:windowFullscreen">true</item>
+
+    </style>
+
+</resources>

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#AAD0FF"
+    android:orientation="vertical"
+    android:padding="16dp"
+    tools:context=".MainActivity">
+
+    <!--뷰의 크기, 글씨, 글씨크기, 글씨색상, 배경색상-->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Hello"
+        android:textSize="30sp"
+        android:textColor="#0000FF"
+        android:textStyle="bold|italic"
+        android:background="#FFFF00"
+        android:padding="16dp"
+        android:layout_marginTop="16dp"/>
+
+    <!--visibility 속성-->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="안녕하세요"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:visibility="gone"
+        android:layout_marginTop="8dp"/>
+
+    
+    <!--배경이미지-->
+    <TextView
+        android:layout_marginTop="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:text="Nice world!"
+        android:background="@drawable/desert"/>
+
+    <!--정렬 : gravity-->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Nice"
+        android:padding="16dp"
+        android:gravity="right"
+        android:background="#FFFFFF"/>
+
+    <!--정렬 : layout_gravity-->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nice"
+        android:padding="16dp"
+        android:layout_gravity="center"
+        android:background="#00FF00"/>
+
+    <!--긴글 출력-->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="안녕하세요. 긴글씨의 경우 한줄에 출력할 때 칸이 모자를 수 있음. 그럼 자동 줄바꿈이 됩니다."
+        android:maxLines="1"
+        android:ellipsize="end"/>
+
+    <!-- autoLink -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="tel:01112345678"
+        android:autoLink="phone"/>
+
+
+    <!-- 글씨를 Resource 로 사용하기-->
+    <!-- strings.xml에 글씨를 써놓고 이를 적용하기-->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/my_text"/>
+
+
+
+
+</LinearLayout>
+

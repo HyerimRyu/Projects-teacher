@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    tools:context=".MainActivity">
+
+    <!--inputType속성 : 소프트키패드의 모양결정-->
+    <!--1. text : 한줄 입력-->
+    <!--2. textMultiLine : 여러줄 입력-->
+    <!--3. number : 숫자 키패드-->
+    <!--4. phone : 전화번호 키패드-->
+    <!--5. textPassword : 입력된 글씨가 자동으로 가려짐 : 영어만가능-->
+    <!--6. numberPassword : 숫자로만 된 패스워드 입력-->
+    <!--7. textCapSentences : 문장의 첫글자는 자동 대문자-->
+    <!--8. textEmailAddress : 키패드에 @모양이 있음-->
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="input data"
+        android:inputType="textCapSentences"/>
+
+    <!-- textMultiLine 관련-->
+    <!-- 라인수에 따라 EditText의 height이 달라짐-->
+
+    <!-- line="3" 속성 : 3줄크기의 EditText가 만들어짐:3줄넘어가면 스크롤이 생김 -->
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textMultiLine"
+        android:lines="3"/>
+
+    <!-- maxLines="3" : 최대 3줄크기까지 height이 커짐. 처음에는 한줄짜리로 보임-->
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textMultiLine"
+        android:maxLines="3"/>
+
+    <!-- 커서지우기-->
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="no cursor"
+        android:cursorVisible="false"/>
+
+    <!-- 밑줄은 배경을 주면 안보임-->
+    <EditText
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="#008800"
+        android:cursorVisible="false"
+        android:textColor="#FFFFFF"
+        android:gravity="top"
+        android:padding="8dp"/>
+
+    <!-- width 값을 글자수를 기준으로 -->
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="3"/>
+
+    <!-- 포커스 자동 이동 구조 만들기 : java코드 필요-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <!-- maxLength : 글자수 제한-->
+        <EditText android:id="@+id/et01"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="3"
+            android:maxLength="3"
+            android:inputType="phone"/>
+        <EditText android:id="@+id/et02"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="4"
+            android:maxLength="4"
+            android:inputType="phone"/>
+        <EditText android:id="@+id/et03"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="4"
+            android:maxLength="4"
+            android:inputType="phone"/>
+
+    </LinearLayout>
+
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="show"
+        android:onClick="clickShow"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="hide"
+        android:onClick="clickHide"/>
+
+
+
+
+
+</LinearLayout>
